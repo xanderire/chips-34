@@ -1,0 +1,162 @@
+points:
+  zones:
+    matrix:
+      columns:
+        pinky:
+        ring.key.stagger: 0.5U
+        middle.key.stagger: 0.1U
+        index.key.stagger: -0.1U
+        inner.key.stagger: -0.1U
+      rows:
+        bottom.padding: 1U
+        home.padding: 1U
+        top.padding: 1U
+    thumb:
+      anchor:
+        ref: matrix_index_bottom
+        shift: [1U, -1.1U]
+        rotate: 0
+      columns:
+        resting:
+          key.name: thumb_resting
+        stretch:
+          key.spread: 1U
+          key.splay: 0
+          key.shift: [-2U, 0.1U]
+          key.name: thumb_stretch
+outlines:
+  raw:
+    - what: rectangle
+      where: true
+      asym: left
+      size: [1U,1U]
+      corner:
+    - what: rectangle
+      where: matrix_middle_bottom
+      size: [5U, 2.25U]
+      adjust:
+        ref: matrix_middle_bottom
+        shift: [0, -U]
+  panel:
+    - what: outline
+      name: raw
+      fillet: 0.5
+  switch_cutouts:
+    - what: rectangle
+      where: true
+      asym: left
+      size: 14
+      bound: false
+  switch_plate:
+    main:
+      what: outline
+      name: panel
+      fillet: 0.5
+    keyholes:
+      what: outline
+      name: switch_cutouts
+      operation: subtract
+  preview:
+    [panel]
+pcbs:
+  chips-34:
+    outlines:
+      board:
+        outline: preview
+      keycaps:
+        outline: switch_cutouts
+        layer: Eco1.User
+    footprints:
+      mx_solder:
+        what: mx
+        where: true
+        params:
+          from: GND
+          to: "{{name}}"
+          reverse: true
+          keycaps: true
+      # mx_hotswap:
+      #   what: mx
+      #   where: true
+      #   adjust:
+      #     rotate: 180
+      #   params:
+      #     from: GND
+      #     to: "{{name}}"
+      #     reverse: true
+      #     keycaps: true
+      #     hotswap: true
+      mcu:
+        what: promicro_pretty
+        where:
+          - ref: matrix_pinky_bottom
+            shift: [8, -1.02U]
+            rotate: 0
+        params:
+          P7: matrix_inner_home
+          P18: matrix_index_top
+          P19: matrix_middle_home
+          P20: matrix_ring_home
+          P21: matrix_ring_top
+          P15: matrix_index_home
+          P14: matrix_inner_top
+          P16: thumb_resting
+          P10: thumb_stretch
+          P1: matrix_pinky_top
+          P2: matrix_pinky_bottom
+          P3: matrix_ring_bottom
+          P4: matrix_middle_top
+          P5: matrix_middle_bottom
+          P6: matrix_index_bottom
+          P8: matrix_inner_bottom
+          P0: matrix_pinky_home
+      trrs:
+        what: trrs
+        where:
+          ref: matrix_middle_bottom
+          shift: [-10, -40]
+          rotate: -180
+        params:
+          mirror: true
+          reverse: true
+          symmetric: false
+          A: VCC
+          B: P2
+          C: P3
+          D: GND
+      reset_button:
+        what: button
+        where:
+          ref: matrix_middle_bottom
+          shift: [3, -26]
+        params:
+          from: RST
+          to: GND
+          side: F
+      reset_button_reverse:
+        what: button
+        where:
+          ref: matrix_middle_bottom
+          shift: [3, -26]
+        params:
+          from: RST
+          to: GND
+          side: B
+      button:
+        what: button
+        where:
+          ref: matrix_middle_bottom
+          shift: [3, -36]
+        params:
+          from: P9
+          to: GND
+          side: F
+      button_reverse:
+        what: button
+        where:
+          ref: matrix_middle_bottom
+          shift: [3, -36]
+        params:
+          from: P9
+          to: GND
+          side: B
