@@ -6,7 +6,7 @@
 #include "config_common.h"
 
 #define USE_SERIAL
-#define SOFT_SERIAL_PIN D2
+#define SOFT_SERIAL_PIN B5
 
 /* key matrix size */
 #define MATRIX_ROWS 8
