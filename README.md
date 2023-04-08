@@ -18,8 +18,10 @@ This started as a project to learn [Ergogen](https://github.com/ergogen/ergogen)
 | Arduino Pro Micro                                       | 2      |
 | TRRS-PJ-320A-dual                                       | 2      |
 | SPST Tactile Switch                                     | 2      |
+| Kailh MX Hotswap Sockets                                | 34     |
 | MX Switches                                             | 34     |
 | MX Keycaps                                              | 34     |
+
 
 ---
 
