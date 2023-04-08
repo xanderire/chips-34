@@ -180,7 +180,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "chips-34.kicad_pro",
+    "filename": "chips-34-design.kicad_pro",
     "version": 1
   },
   "net_settings": {
@@ -296,6 +296,10 @@
       {
         "netclass": "Default",
         "pattern": "VCC"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "P9"
       },
       {
         "netclass": "Default",
