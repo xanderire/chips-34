@@ -38,7 +38,7 @@ This started as a project to learn [Ergogen](https://github.com/ergogen/ergogen)
 />
 
 <img
-    src = 'image/img_pcb_gerber.jpg'
+    src = 'image/img_pcb_gerber.png'
     alt = 'Gerber file for pcb'
     align = centre
 />
