@@ -23,19 +23,7 @@ This started as a project to learn [Ergogen](https://github.com/ergogen/ergogen)
 
 ---
 
-## Images (old)
-
-<img
-    src = 'image/old/img_pcbs.jpg'
-    alt = 'Split prototype pcbs without components'
-    align = centre
-/>
-
-<img
-    src = 'image/old/img_built_prototype.jpg'
-    alt = 'Left side prototype pcb with soldered components'
-    align = centre
-/>
+## Images
 
 <img
     src = 'image/img_pcb_gerber.png'
