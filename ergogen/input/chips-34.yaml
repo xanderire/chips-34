@@ -40,6 +40,7 @@ points:
             splay: 0
             shift: [-2U, 0]
             rotate: 0
+
 outlines:
   raw:
     - what: rectangle
@@ -80,8 +81,49 @@ outlines:
       what: outline
       name: switch_cutouts
       operation: subtract
+    mcu_cutout:
+      what: polygon
+      points:
+        - ref: matrix_ring_bottom
+          shift: [-0.5U, 0.5U]
+        - ref: matrix_ring_bottom
+          shift: [0.5U, 0.5U]
+        - ref: matrix_middle_bottom
+          shift: [-0.5U, 0.5U]
+        - ref: matrix_middle_bottom
+          shift: [0.5U, 0.5U]
+        - ref: matrix_middle_bottom
+          shift: [0.5U, 0.2U]
+        - ref: matrix_index_bottom
+          shift: [-0.25U, 0.5U]
+        - ref: matrix_index_bottom
+          shift: [-0.25U, -0.7U]
+        - ref: matrix_pinky_bottom
+          shift: [-0.5U, -0.5U]
+        - ref: matrix_pinky_bottom
+          shift: [-0.5U, 0.5U]
+        - ref: matrix_pinky_bottom
+          shift: [0.5U, 0.5U]
+      adjust:
+          shift: [0, -1U]
+      operation: subtract
+    trrs_up_cutout:
+      what: rectangle
+      where: matrix_pinky_top
+      size: [0.5U, 1U]
+      adjust:
+        shift: [-0.25U, 1U]
+      operation: subtract
+    trrs_side_cutout:
+      what: rectangle
+      where: matrix_inner_top
+      size: [1U, 0.5U]
+      adjust:
+        shift: [0.33U, 0.74U]
+      operation: subtract
   preview:
     [panel]
+
 pcbs:
   chips-34:
     outlines:
